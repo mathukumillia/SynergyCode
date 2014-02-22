@@ -34,6 +34,7 @@ function initCodemirror(id){
 var editor = initCodemirror(document.getElementById('editor'));   //holds the instance of codemirror
 var connection = new sharejs.Connection();      //this variable keeps track of the sharejs connection
 var fileData;       //this variable holds the file data received when a user tries to open up a file
+var fileName = null;       //this variable holds the name of the currently open file--null when no file is open
 
 //tells server to load file, sets up the sharejs connection if necessary
 function fileLoader(filePath) {
@@ -58,7 +59,7 @@ function fileLoader(filePath) {
     connection = new sharejs.Connection();
     connection.open(fileName, 'text', function(error, doc) {
         doc.attach_cm(editor);
-        console.info('doc opened');
+        console.info('DEBUG: Document opened');
         editor.setValue(fileData);
     });
     console.info('DEBUG: Connection Opened');
@@ -99,11 +100,14 @@ function togglePreview(){
 //updates preview and saves file when the file contents are changed
 editor.on('change', function (op) {
     var fileData = editor.getValue();
-    preview(fileData);
-    socket.emit('fileChanged', {
-        message: fileData
-    });
-    console.info('change event on front side');
+    if(fileName!=null){
+        preview(fileData);
+        socket.emit('fileChanged', {
+            message: fileData
+        });
+    }else{
+        alert("Please open a file to edit. Edits made with no file open will not be saved.");
+    }
 });
 
 //sets width of editor

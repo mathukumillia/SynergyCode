@@ -363,14 +363,20 @@ sio.sockets.on('connection', function (socket) {
         console.log('DEBUG: File Loaded');
     });
     
+    var n = 0;      //variable makes sure server doesn't overload with too much file writing at one time
     //saves files to editableFiles directory
     socket.on('fileChanged', function (data) {
-        fs.writeFile('public/editableFiles/' + fileName, data.message, function (err) {
-            if (err) {
-                throw err;
-            }
-            console.log('fileChanged event received on server');
-        });
+        if(n >= 5){
+            fs.writeFile('public/editableFiles/' + fileName, data.message, function (err) {
+                if (err) {
+                    throw err;
+                }
+                console.log('DEBUG: FileChanged Event Received On Server');
+            });
+            n=0;
+        }else{
+            n++;
+        }
     });
 
     //creates a new file in editableFiles directory
