@@ -1,0 +1,39 @@
+	body {
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+	}
+	#header {
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		background-color: Green;
+	}
+	#nav {
+		margin:0;
+		padding:0;
+		position: relative;
+		top: -10px;
+		width: 100%;
+		height: 30px;
+		font-size:150%;
+		text-align: center;
+		background-color: Gray;
+	}
+	#nav li {
+		display:inline;
+		padding:0;
+		margin:0;
+	}
+	#content {
+		position: relative;
+		top: 30px;
+		background-color: white;
+	}
+	#footer {
+		position: relative;
+		top: 50px;
+		width: 100%;
+		height: 50px;
+		background-color: Blue;
+	}
