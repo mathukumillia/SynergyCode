@@ -348,6 +348,7 @@ sio.sockets.on('connection', function (socket) {
 
     //loads a file into the editor
     socket.on('fileLoad', function (data) {
+        console.log('DEBUG: File Load Initiated ');
         filePath = data.message;
         fileNameArray = filePath.split("/");
         fileName = fileNameArray[fileNameArray.length - 1];
