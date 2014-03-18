@@ -5,8 +5,8 @@
 exports.index = function(req, res){
 	res.render('index', { title: 'SynergyCode' });
 };
-exports.filetest = function(req, res){
-	res.render('filetest', { title: 'SynergyCode' });
+exports.edit = function(req, res){
+	res.render('edit', { title: 'SynergyCode' });
 };
 exports.create = function(req, res){
 	res.render('createFile');

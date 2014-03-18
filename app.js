@@ -235,7 +235,7 @@ var signout = function(req, res){
 * handlers for the server's GET requests
 **/
 app.get('/', pageRouter.index);
-app.get('/edit', requiresLogin, pageRouter.filetest);
+app.get('/edit', requiresLogin, pageRouter.edit);
 app.get('/logout', signout);
 app.get('/create', requiresLogin, pageRouter.create);
 app.get('/admin', requiresLogin, function(req, res){
@@ -364,20 +364,14 @@ sio.sockets.on('connection', function (socket) {
         console.log('DEBUG: File Loaded');
     });
     
-    var n = 0;      //variable makes sure server doesn't overload with too much file writing at one time
     //saves files to editableFiles directory
     socket.on('fileChanged', function (data) {
-        if(n >= 5){
-            fs.writeFile('public/editableFiles/' + fileName, data.message, function (err) {
-                if (err) {
-                    throw err;
-                }
-                console.log('DEBUG: FileChanged Event Received On Server');
-            });
-            n=0;
-        }else{
-            n++;
-        }
+        fs.writeFile('public/editableFiles/' + fileName, data.message, function (err) {
+            if (err) {
+                throw err;
+            }
+            console.log('DEBUG: FileChanged Event Received On Server');
+        });
     });
 
     //creates a new file in editableFiles directory
