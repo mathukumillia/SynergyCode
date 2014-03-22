@@ -1,0 +1,12 @@
+things to do to install this software so far
+
+1) install node
+2) install bower--doing this can require setting the proper npm prefix as shown below:  
+	$ npm config set prefix /usr/local
+	$ npm install -g bower
+3) install grunt--this can also require setting the proper npm prefix
+4) run npm install
+5) sometimes you may need to run bower install as well
+6) install mongodb, make sure database is running
+7) run grunt by typing "grunt" into the terminal. the program should start
+
