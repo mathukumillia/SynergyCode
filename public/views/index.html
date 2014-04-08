@@ -1,9 +1,9 @@
 <section data-ng-controller="IndexController">
-	<h1>Welcome to Synergy Code!</h1>
-	<textarea ui-codemirror = "{
-      lineNumbers: true,
-      theme:'monokai',
-      lineWrapping : true,
-      mode: 'xml'
-      }"></textarea>
-</section>
+	<h1 data-ng-hide = "global.authenticated">Welcome to Synergy Code!</h1>
+	<table class = "editorTable" data-ng-show = "global.authenticated">
+		<tr>
+			<td><textarea ui-codemirror = "{onLoad:codeMirrorLoaded}" ng-model = "data.content"></textarea></td>
+			<td><iframe name = "preview"></iframe></td>
+		</tr>
+	</table>
+</section>	
