@@ -19,6 +19,9 @@
 			"public/lib/codemirror/mode/xml/xml.js",
 			"public/lib/codemirror/mode/css/css.js",
 			"public/lib/codemirror/mode/htmlmixed/htmlmixed.js",
+			"public/lib/angular-markdown-preview/markdown_preview.js",
+			"public/lib/marked/lib/marked.js",
+			"public/lib/angular-sanitize/angular-sanitize.js",
 			"public/js/**/*.js"
 		]
 	}

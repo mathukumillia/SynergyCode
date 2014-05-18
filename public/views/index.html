@@ -1,8 +1,14 @@
 <section data-ng-controller="IndexController">
 	<h1 data-ng-hide = "global.authenticated">Welcome to Synergy Code!</h1>
 	<table class = "editorTable" data-ng-show = "global.authenticated">
+		<tr class = "headerRow">
+			<td>Editor</td>
+			<td>Preview</td>
+		</tr>
 		<tr>
-			<td><textarea ui-codemirror = "{onLoad:codeMirrorLoaded}" ng-model = "data.content"></textarea></td>
-			<td><iframe name = "preview"></iframe></td>
+			<td><textarea name = "editor" ui-codemirror = "{onLoad:codeMirrorLoaded}" ng-model = "data.content"></textarea></td>
+			<td><div class = "preview" ng-bind-html = "data.content"></div></td>
 		</tr>
 	</table>
+</section>	
+
