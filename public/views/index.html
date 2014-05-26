@@ -1,5 +1,7 @@
 <section data-ng-controller="IndexController">
 	<h1 data-ng-hide = "global.authenticated">Welcome to Synergy Code!</h1>
+</section>	
+<section data-ng-controller="editableFilesCtrl">
 	<table class = "editorTable" data-ng-show = "global.authenticated">
 		<tr class = "headerRow">
 			<td>Editor</td>
@@ -10,5 +12,4 @@
 			<td><div class = "preview" ng-bind-html = "data.content"></div></td>
 		</tr>
 	</table>
-</section>	
-
+</section>

@@ -3,6 +3,7 @@
 		"public/build/css/dist.min.css": [
 			"public/lib/bootstrap/dist/css/bootstrap.css",
 			"public/lib/codemirror/lib/codemirror.css",
+			"public/lib/angular.treeview-master/css/angular.treeview.css",
 			"public/css/**/*.css"
 		]
 	},
@@ -22,6 +23,8 @@
 			"public/lib/angular-markdown-preview/markdown_preview.js",
 			"public/lib/marked/lib/marked.js",
 			"public/lib/angular-sanitize/angular-sanitize.js",
+			"public/lib/angular.treeview-master/angular.treeview.js",
+			"/socket.io/socket.io.js",
 			"public/js/**/*.js"
 		]
 	}
