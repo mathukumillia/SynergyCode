@@ -1,8 +1,19 @@
-<section data-ng-controller="IndexController">
-	<h1 data-ng-hide = "global.authenticated">Welcome to Synergy Code!</h1>
+<section data-ng-controller="IndexController" data-ng-hide = "global.authenticated">
+	<h1>Welcome to Synergy Code!</h1>
 </section>	
-<section data-ng-controller="editableFilesCtrl">
-	<table class = "editorTable" data-ng-show = "global.authenticated">
+<section class = "fileList" data-ng-controller = "FileListCtrl" data-ng-show = "global.authenticated">
+	<h3>Files</h3>
+	<div
+		data-angular-treeview="true"
+		data-tree-id="tree"
+		data-tree-model="roleList"
+		data-node-id="roleId"
+		data-node-label="roleName"
+		data-node-children="children" >
+	</div>
+</section>
+<section data-ng-controller="EditableFilesCtrl" data-ng-show = "global.authenticated">
+	<table class = "editorTable">
 		<tr class = "headerRow">
 			<td>Editor</td>
 			<td>Preview</td>

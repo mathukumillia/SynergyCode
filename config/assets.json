@@ -24,7 +24,6 @@
 			"public/lib/marked/lib/marked.js",
 			"public/lib/angular-sanitize/angular-sanitize.js",
 			"public/lib/angular.treeview-master/angular.treeview.js",
-			"/socket.io/socket.io.js",
 			"public/js/**/*.js"
 		]
 	}

@@ -1,18 +1,37 @@
 'use strict';
 
-var app = angular.module('mean.editableFiles', []);
-
-app.factory('socket', function(){
+angular.module('mean.system').factory('socket', function(){
 	var socket = io.connect('http://localhost:3000'); //connection address needs to change when hosting a live server
 	return socket;
 });
 
-app.controller('editableFilesCtrl', ['$scope', 'socket', 'Global', function($scope, socket, Global){
+angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', function($scope, Global){
+	$scope.global = Global;
+
+	 $scope.roleList1 = [
+        { 'roleName' : 'User', 'roleId' : 'role1', 'children' : [
+          { 'roleName' : 'subUser1', 'roleId' : 'role11', 'children' : [] },
+          { 'roleName' : 'subUser2', 'roleId' : 'role12', 'children' : [
+            { 'roleName' : 'subUser2-1', 'roleId' : 'role121', 'children' : [
+              { 'roleName' : 'subUser2-1-1', 'roleId' : 'role1211', 'children' : [] },
+              { 'roleName' : 'subUser2-1-2', 'roleId' : 'role1212', 'children' : [] }
+            ]}
+          ]}
+        ]},
+
+        { 'roleName' : 'Admin', 'roleId' : 'role2', 'children' : [] },
+
+        { 'roleName' : 'Guest', 'roleId' : 'role3', 'children' : [] }
+      ];
+       $scope.roleList = $scope.roleList1;
+}]);
+
+angular.module('mean.system').controller('EditableFilesCtrl', ['$scope', 'Global', function($scope, Global, socket){
 	$scope.global = Global;
 
 	$scope.codeMirrorLoaded = function(editor){
         editor.setOption('lineNumbers', true);
-        editor.setOption('theme', 'default');
+        editor.setOption('theme', 'monokai');
         editor.setOption('lineWrapping', true);
         editor.setOption('mode', 'application/xml');
     };
