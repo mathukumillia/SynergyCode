@@ -52,7 +52,7 @@ footer p {
 .fileList{
    position: absolute;
    top: 85px;
-   left: 0px;
+   left: 0;
 }
 
 .fileList div{

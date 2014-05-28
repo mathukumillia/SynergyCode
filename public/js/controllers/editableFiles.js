@@ -1,8 +1,7 @@
 'use strict';
 
-angular.module('mean.system').factory('socket', function(){
-	var socket = io.connect('http://localhost:3000'); //connection address needs to change when hosting a live server
-	return socket;
+angular.module('mean.system').factory('socket', function(socketFactory){
+  return socketFactory();
 });
 
 angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', function($scope, Global){
@@ -26,7 +25,7 @@ angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', fu
        $scope.roleList = $scope.roleList1;
 }]);
 
-angular.module('mean.system').controller('EditableFilesCtrl', ['$scope', 'Global', function($scope, Global, socket){
+angular.module('mean.system').controller('EditableFilesCtrl', ['$scope', 'Global', 'socket' ,function($scope, Global, socket){
 	$scope.global = Global;
 
 	$scope.codeMirrorLoaded = function(editor){
