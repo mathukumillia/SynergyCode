@@ -44,9 +44,7 @@ walk(models_path);
 // Bootstrap passport config
 require('./config/passport')(passport);
 
-var app = express(),
-    server = require('http').createServer(app), 
-    io = require('socket.io').listen(server);   //start socket.io
+var app = express();
 
 // Express settings
 require('./config/express')(app, passport, db);

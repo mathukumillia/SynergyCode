@@ -35,4 +35,8 @@ angular.module('mean.system').controller('EditableFilesCtrl', ['$scope', 'Global
         editor.setOption('mode', 'application/xml');
     };
 
+    socket.on('hello', function(){
+      alert('HELLO');
+    });
+
 }]);
