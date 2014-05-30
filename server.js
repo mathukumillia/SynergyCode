@@ -46,6 +46,16 @@ require('./config/passport')(passport);
 
 var app = express();
 
+//set up server that socket.io listens to
+var server = require('http').Server(app);
+
+//set up socket.io
+var io = require('socket.io').listen(server);
+
+//initiate socket.io communication
+//additional routes to load can be placed here
+io.on('connection', require('./app/routes/editableFiles'));
+
 // Express settings
 require('./config/express')(app, passport, db);
 
@@ -72,8 +82,15 @@ walk(routes_path);
 
 // Start the app by listening on <port>
 var port = process.env.PORT || config.port;
-app.listen(port);
-console.log('Express app started on port ' + port);
+// app.listen(port);
+// console.log('Express app started on port ' + port);
+/**
+ * Start Server
+ */
+
+server.listen(port, function () {
+  console.log('Express server listening on port ' + port);
+});
 
 // Initializing logger
 logger.init(app, passport, mongoose);

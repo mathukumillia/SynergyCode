@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(app){
+module.exports = function(socket){
 	var editableFile = require('../controllers/editableFiles');
-	editableFile.loadFile(app);	
+	editableFile.loadFile(socket);	
 };

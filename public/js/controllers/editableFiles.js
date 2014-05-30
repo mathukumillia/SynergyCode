@@ -22,7 +22,7 @@ angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', fu
 
         { 'roleName' : 'Guest', 'roleId' : 'role3', 'children' : [] }
       ];
-       $scope.roleList = $scope.roleList1;
+    $scope.roleList = $scope.roleList1;
 }]);
 
 angular.module('mean.system').controller('EditableFilesCtrl', ['$scope', 'Global', 'socket' ,function($scope, Global, socket){
@@ -36,7 +36,7 @@ angular.module('mean.system').controller('EditableFilesCtrl', ['$scope', 'Global
     };
 
     socket.on('hello', function(){
-      alert('HELLO');
+      console.log('DEBUG: Socket.io Is Functional.');
     });
 
 }]);

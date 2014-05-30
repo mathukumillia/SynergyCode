@@ -1,12 +1,7 @@
 'use strict';
 
-exports.loadFile = function(app){
-	var server = require('http').createServer(app), 
-    	io = require('socket.io').listen(server); 
-	io.sockets.on('connection', function(){
-		console.log('DEBUG: You Have Connected To SynergyCode.');
-	});
-	io.sockets.emit('hello', function(socket){
+exports.loadFile = function(socket){
+	socket.emit('hello', function(){
 		console.print('hello emitted');
 	});
 };
