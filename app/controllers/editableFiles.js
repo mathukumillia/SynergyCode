@@ -2,7 +2,7 @@
 
 exports.loadFile = function(socket){
 	socket.emit('hello', function(){
-		console.print('hello emitted');
+		console.log('hello emitted');
 	});
 };
 

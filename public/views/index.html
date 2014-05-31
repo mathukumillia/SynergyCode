@@ -2,6 +2,7 @@
 	<h1>Welcome to Synergy Code!</h1>
 </section>	
 <section class = "fileList" data-ng-controller = "FileListCtrl" data-ng-show = "global.authenticated">
+	<span>{{tree.currentNode.roleName}}</span>
 	<h3>Files</h3>
 	<div
 		data-angular-treeview="true"
@@ -9,7 +10,8 @@
 		data-tree-model="roleList"
 		data-node-id="roleId"
 		data-node-label="roleName"
-		data-node-children="children" >
+		data-node-children="children" 
+		data-ng-click = "">
 	</div>
 </section>
 <section data-ng-controller="EditableFilesCtrl" data-ng-show = "global.authenticated">
