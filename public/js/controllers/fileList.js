@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', function($scope, Global){
+angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', 'socket', function($scope, Global, socket){
 	$scope.global = Global;
 
 	 $scope.roleList1 = [
@@ -19,4 +19,9 @@ angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', fu
         { 'roleName' : 'Guest', 'roleId' : 'role3', 'children' : [] }
       ];
     $scope.roleList = $scope.roleList1;
+
+    $scope.sendFileName = function(){
+      socket.emit('fileName', {message: $scope.tree.currentNode.roleName});
+      console.log('DEBUG: File Name Sent: ' + $scope.tree.currentNode.roleName);
+    };
 }]);
