@@ -27,6 +27,10 @@ angular.module('mean').config(['$stateProvider', '$urlRouterProvider',
       .state('home', {
         url: '/',
         templateUrl: 'views/index.html'
+    })
+      .state('create Editable File', {
+        url: '/createEditableFiles',
+        templateUrl: 'views/createEditableFile.html'
     });
 }
 ]);

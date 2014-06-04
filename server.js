@@ -54,7 +54,7 @@ var io = require('socket.io').listen(server);
 
 //initiate socket.io communication
 //additional routes to load can be placed here
-io.on('connection', require('./app/routes/editableFiles'));
+io.on('connection', require('./app/routes/socketio'));
 
 // Express settings
 require('./config/express')(app, passport, db);

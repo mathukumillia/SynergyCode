@@ -7,8 +7,8 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
         'title': 'File',
         'link': 'articles'
     }, {
-        'title': 'Edit',
-        'link': 'articles/create'
+        'title': 'Create',
+        'link': 'createEditableFiles'
     }];
     
     $scope.isCollapsed = false;

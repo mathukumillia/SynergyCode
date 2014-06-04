@@ -11,7 +11,7 @@ var loadFileFromDb = function(fileName, socket){
 	EditableFile.load(fileName, function(err, editableFile) {
         if (err) return err;
         if (!editableFile){
-        	console.log("DEBUG: Error Encountered When Trying To Load File " + fileName);
+        	console.log('DEBUG: Error Encountered When Trying To Load File ' + fileName);
         	return (new Error('Failed to load file ' + fileName));
         }
         socket.emit('fileContent', {message: editableFile.content});
@@ -36,4 +36,34 @@ exports.loadFile = function(socket){
 		loadFileFromDb(fileName, socket);
 	});
 
+};
+
+/**
+* Create an editableFile
+**/
+exports.create = function(req, res) {
+    var editableFile = new EditableFile(req.body);
+    editableFile.user = req.user;
+
+    editableFile.save(function(err) {
+        if (err) {
+            return res.send('users/signup', {
+                errors: err.errors,
+                editableFile: editableFile
+            });
+        } else {
+            res.jsonp(editableFile);
+        }
+    });
+
+    console.log('DEBUG: File Created');
+};
+
+/**
+*  List of all editableFiles
+**/
+exports.all = function(socket){
+    EditableFile.find().sort('created').populate('user', 'name username').exec(function(err, files) {
+        socket.emit('fileList', {message: files});
+    });
 };

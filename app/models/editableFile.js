@@ -46,7 +46,7 @@ EditableFileSchema.path('permission').validate(function(permission) {
 
 /**
  * Statics
- */
+**/
 EditableFileSchema.statics.load = function(title, cb) {
     this.findOne({
         title: title
