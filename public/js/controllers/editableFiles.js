@@ -7,11 +7,21 @@ angular.module('mean.editableFiles').factory('socket', function(socketFactory){
 angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 'Global', 'socket', 'EditableFiles', function($scope, Global, socket, EditableFiles){
 	$scope.global = Global;
 
+    var currentFile;
+    var fileOpened = false;
+
 	$scope.codeMirrorLoaded = function(editor){
         editor.setOption('lineNumbers', true);
         editor.setOption('theme', 'monokai');
         editor.setOption('lineWrapping', true);
         editor.setOption('mode', 'application/xml');
+
+        editor.on('change', function(){
+            if(fileOpened){
+                console.log('DEBUG: Editor Content Changed');
+                socket.emit('saveFile', {message: currentFile});
+            }
+        });
     };
 
     socket.on('hello', function(){
@@ -19,7 +29,10 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
     });
 
     socket.on('fileContent', function(data){
-      console.log(data.message);
+        fileOpened = true;
+        currentFile = data.message;
+        $scope.content = currentFile.content;
+        console.log('DEBUG: ' + currentFile.title + ' Is Now Open');
     });
 
     $scope.create = function() {
@@ -33,7 +46,7 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
         this.title = '';
         this.content = '';
 
-        console.log('DEBUG: Create Called On FrontEnd');
+        socket.emit('refreshFileList');
     };
 
 }]);

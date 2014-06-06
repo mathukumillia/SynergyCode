@@ -3,15 +3,7 @@
 </section>	
 <section class = "fileList" data-ng-controller = "FileListCtrl" data-ng-show = "global.authenticated">
 	<h3>Files</h3>
-	<div
-		data-angular-treeview="true"
-		data-tree-id="tree"
-		data-tree-model="roleList"
-		data-node-id="roleId"
-		data-node-label="roleName"
-		data-node-children="children" 
-		data-ng-click = "sendFileName()">
-	</div>
+	<div data-ng-repeat = "item in fileMenu" data-ng-click = "sendFileName(item)">{{item}}</div>
 </section>
 <section data-ng-controller="EditableFilesCtrl" data-ng-show = "global.authenticated">
 	<table class = "editorTable">
@@ -20,8 +12,8 @@
 			<td>Preview</td>
 		</tr>
 		<tr>
-			<td><textarea name = "editor" ui-codemirror = "{onLoad:codeMirrorLoaded}" ng-model = "data.content"></textarea></td>
-			<td><div class = "preview" ng-bind-html = "data.content"></div></td>
+			<td><textarea name = "editor" ui-codemirror = "{onLoad:codeMirrorLoaded}" ng-model = "content"></textarea></td>
+			<td><div class = "preview" ng-bind-html = "content"></div></td>
 		</tr>
 	</table>
 </section>

@@ -14,7 +14,7 @@ var loadFileFromDb = function(fileName, socket){
         	console.log('DEBUG: Error Encountered When Trying To Load File ' + fileName);
         	return (new Error('Failed to load file ' + fileName));
         }
-        socket.emit('fileContent', {message: editableFile.content});
+        socket.emit('fileContent', {message: editableFile});
         console.log('DEBUG: Emitted File Content');
     });
 };
@@ -57,6 +57,21 @@ exports.create = function(req, res) {
     });
 
     console.log('DEBUG: File Created');
+};
+
+/**
+* saves files to the database
+**/
+exports.saveFile = function(editableFile){
+    EditableFile.load(editableFile.title, function(err, file){
+         file.save(function(err) {
+            if (err) {
+                console.log('DEBUG: Error Occurred When Trying To Save File');
+                return err;
+            } 
+        });
+        console.log('DEBUG: File Saved');
+    });
 };
 
 /**
