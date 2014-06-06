@@ -6,7 +6,8 @@
 var express = require('express'),
     fs = require('fs'),
     passport = require('passport'),
-    logger = require('mean-logger');
+    logger = require('mean-logger'),
+    sharejs = require('share').server;
 
 /**
  * Main application entry file.
@@ -45,6 +46,10 @@ walk(models_path);
 require('./config/passport')(passport);
 
 var app = express();
+
+//set up sharejs connection
+var options = {db: {type: 'none'}};
+sharejs.attach(app, options);
 
 //set up server that socket.io listens to
 var server = require('http').Server(app);
