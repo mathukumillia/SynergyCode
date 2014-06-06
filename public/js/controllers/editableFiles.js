@@ -19,7 +19,8 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
         editor.on('change', function(){
             if(fileOpened){
                 console.log('DEBUG: Editor Content Changed');
-                socket.emit('saveFile', {message: currentFile});
+                var fileInfo = [currentFile.title, $scope.content];
+                socket.emit('saveFile', {message: fileInfo});
             }
         });
     };

@@ -62,9 +62,11 @@ exports.create = function(req, res) {
 /**
 * saves files to the database
 **/
-exports.saveFile = function(editableFile){
-    EditableFile.load(editableFile.title, function(err, file){
-         file.save(function(err) {
+exports.saveFile = function(fileInfo){
+    console.log('This is the file content being saved ' + fileInfo[1]);
+    EditableFile.load(fileInfo[0], function(err, file){
+        file.content = fileInfo[1];
+        file.save(function(err) {
             if (err) {
                 console.log('DEBUG: Error Occurred When Trying To Save File');
                 return err;
