@@ -25,6 +25,7 @@
 			"public/lib/angular-sanitize/angular-sanitize.js",
 			"public/lib/angular.treeview-master/angular.treeview.js",
 			"public/lib/angular-socket-io/socket.js",
+			"public/lib/share-codemirror/share-codemirror.js",
 			"public/js/**/*.js"
 		]
 	}
