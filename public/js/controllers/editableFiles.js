@@ -69,5 +69,4 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
 
         socket.emit('refreshFileList');
     };
-
 }]);

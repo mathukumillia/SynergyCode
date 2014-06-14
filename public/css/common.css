@@ -5,7 +5,7 @@
 
 .content {
     margin-top:100px;
-    width:100%
+    width:100%;
 }
 
 footer {
@@ -28,18 +28,12 @@ footer p {
     position: relative;
     left: 130px;
     width: 92%;
-    height: 100%;
-}
-
-.editorTable td {
-    width: 50%; 
-}
+    height: 90%;
+}   
 
 .preview{
-    position: relative;
-    top: 2px;
     height:100%;
-    width: 100%;
+    width: 50%;
     border: 1px solid black;
     vertical-align: text-top;
 }
@@ -51,16 +45,36 @@ footer p {
 
 .fileList{
    position: absolute;
-   top: 85px;
-   left: 0;
+   top: 82px;
+   left: 5px;
+   width: 165px;
 }
 
-.fileList div{
-    width: 200px;
+.fileMenu{
+    border: 1px solid black;
+}
+
+.fileMenu div{
+    width: 100%;
+    padding: 1px;
+    padding-left: 5px;    
+}
+
+.fileMenu div:hover{
+    background-color: #87CEEB;
+    cursor: pointer; cursor: hand; 
 }
 
 .fileList h3{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 4px;
+}
+
+.previewBtn{
+    position: absolute;
+    top: 85px;
+    right: 10px;
+    z-index: 5;
 }
