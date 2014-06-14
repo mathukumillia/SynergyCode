@@ -4,16 +4,18 @@
   "dependencies": {
     "angular": "latest",
     "angular-resource": "latest",
-    "angular-cookies": "latest",
-    "angular-mocks": "latest",
-    "angular-route": "latest",
+    "angular-cookies": "1.2.15",
+    "angular-mocks": "1.2.15",
+    "angular-route": "1.2.15",
+    "angular-sanitize": "1.2.16",
+    "angular-socket-io": "0.6.0",
     "bootstrap": "3.0.3",
     "angular-bootstrap": "0.10.0",
-    "angular-ui": "latest",
+    "angular-ui": "0.4.0",
     "angular-ui-router": "#master",
     "angular-ui-codemirror": "#bower"
   },
   "resolutions": {
-    "angular": "1.2.16"
+    "angular": "1.2.15"
   }
 }
