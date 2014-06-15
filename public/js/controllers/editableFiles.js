@@ -1,9 +1,5 @@
 'use strict';
 
-angular.module('mean.editableFiles').factory('socket', function(socketFactory){
-  return socketFactory();
-});
-
 angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 'Global', 'socket', 'EditableFiles', function($scope, Global, socket, EditableFiles){
 	$scope.global = Global;
 

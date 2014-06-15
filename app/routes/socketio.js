@@ -1,10 +1,12 @@
 'use strict';
 
 var editableFile = require('../controllers/editableFiles');
+var chat = require('../controllers/chat');
 
 module.exports = function(socket){
 	editableFile.loadFile(socket);	
 	editableFile.all(socket);
+	chat.chat(socket);
 
 	socket.on('refreshFileList', function(){
 		editableFile.all(socket);

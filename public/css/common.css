@@ -78,3 +78,21 @@ footer p {
     right: 35px;
     z-index: 5;
 }
+
+.chat{
+    position: absolute;
+    height: 215px;
+    width: 200px;
+    border: 1px solid black;
+}
+
+.chatContent{
+    height: 160px;
+    overflow-y: scroll;
+}
+
+.chat input{
+    position: relative;
+    top: -19px;
+    width: 100%;
+}
