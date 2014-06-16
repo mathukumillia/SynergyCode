@@ -2,33 +2,7 @@
 	<h1>Welcome to Synergy Code!</h1>
 </section>
 
-
-<section class = "fileList" data-ng-controller = "FileListCtrl" data-ng-show = "global.authenticated">
-	<h3>Files</h3>
-	<div class = "fileMenu">
-		<div data-ng-repeat = "item in fileMenu" data-ng-click = "sendFileName(item)"><span class = "glyphicon glyphicon-file"></span>  {{item}}</div>
-	</div>
-</section>
-
-
-<section data-ng-controller="EditableFilesCtrl" data-ng-show = "global.authenticated">
-	<button ng-click = "hidePreview = !hidePreview" class = "btn btn-default previewBtn">Toggle Preview</button>
-	<table class = "editorTable">
-		<tr class = "headerRow">
-			<td>Editor</td>
-			<td ng-hide="hidePreview">Preview</td>
-		</tr>
-		<tr>
-			<td><textarea name = "editor" ui-codemirror = "{onLoad:codeMirrorLoaded}" ng-model = "content"></textarea></td>
-			<td class = "preview" ng-hide = "hidePreview"><div ng-bind-html = "content"></div></td>
-		</tr>
-	</table>
-</section>
-
-<section data-ng-controller = "ChatCtrl" data-ng-show = "global.authenticated">
-	<div class = "chat" draggable>
-		<div ng-bind-html = "chatContent" class = "chatContent"></div><br>
-		<input type = "text" placeholder = "Enter user name here" ng-model = "username"><br>
-		<input type = "text" placeholder = "Enter message here" ng-model = "message" ng-keypress = "checkToSend($event)">
-	</div>
+<section data-ng-controller = "IndexController" data-ng-show = "global.authenticated">
+	<a href="#!/edit">Click me!</a>
+	<div>HELLLOOO</div>
 </section>

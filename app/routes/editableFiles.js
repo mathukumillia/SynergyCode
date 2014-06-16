@@ -5,5 +5,6 @@ var editableFiles = require('../controllers/editableFiles'),
 
 module.exports = function(app){
 	app.post('/createEditableFiles', authorization.requiresLogin, editableFiles.create);
+	app.post('/edit', authorization.requiresLogin);
 	console.log('DEBUG: Editable File Route Works');
 };
