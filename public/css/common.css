@@ -80,9 +80,9 @@ footer p {
 }
 
 .chat{
-    position: absolute;
-    bottom: 200px;
-    left: 90%;
+    position: relative;
+    top: -216px;
+    left: -90px;
     height: 215px;
     width: 200px;
     border: 1px solid black;
