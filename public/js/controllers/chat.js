@@ -34,7 +34,7 @@ angular.module('mean.chat').controller('ChatCtrl', ['$scope', 'Global', 'socket'
             socket.emit('send', { message: text, username: $scope.username });
             $scope.message= '';
         }
-	}
+	};
 
     $scope.getUserName = function(){
 

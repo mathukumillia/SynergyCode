@@ -81,9 +81,12 @@ footer p {
 
 .chat{
     position: absolute;
+    bottom: 200px;
+    left: 90%;
     height: 215px;
     width: 200px;
     border: 1px solid black;
+    z-index: 100000;
 }
 
 .chatContent{
