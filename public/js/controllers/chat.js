@@ -27,13 +27,11 @@ angular.module('mean.chat').controller('ChatCtrl', ['$scope', 'Global', 'socket'
     });
 
 	var sendMessage = function(){
-		if($scope.username === '') {
-            alert('Please type your name!');
-        } else if($scope.message === ''){
+		if($scope.message === ''){
             alert('Please type a message!');
         }else{
             var text = $scope.message;
-            socket.emit('send', { message: text, username: $scope.username });
+            socket.emit('send', { message: text, username: window.user.name });
             $scope.message= '';
         }
 	};

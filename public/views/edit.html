@@ -23,7 +23,6 @@
 <section data-ng-controller = "ChatCtrl" data-ng-show = "global.authenticated">
 	<div class = "chat" draggable>
 		<div ng-bind-html = "chatContent" class = "chatContent"></div><br>
-		<input type = "text" placeholder = "Enter user name here" ng-model = "username"><br>
 		<input type = "text" placeholder = "Enter message here" ng-model = "message" ng-keypress = "checkToSend($event)">
 	</div>
 </section>
