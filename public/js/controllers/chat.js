@@ -10,7 +10,9 @@ angular.module('mean.chat').controller('ChatCtrl', ['$scope', 'Global', 'socket'
 	});
 
 	socket.on('message', function (data) {
+    console.log('message recieved');
         if(data.message) {
+          console.log('message received');
             messages.push(data);
             var html = '';
             for(var i=0; i<messages.length; i++) {
