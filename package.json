@@ -1,7 +1,7 @@
 {
   "name": "SynergyCode",
   "description": "A Node.js FTP Alternative designed with collaberation in mind.",
-  "version": "0.1.0.1",
+  "version": "0.1.1",
   "private": false,
   "repository": {
     "type": "git",
