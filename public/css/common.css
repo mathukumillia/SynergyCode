@@ -99,3 +99,9 @@ footer p {
     top: -19px;
     width: 100%;
 }
+
+.profilePic{
+    min-height: 250px;
+    height: auto;
+    max-width: 30%;
+}

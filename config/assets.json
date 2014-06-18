@@ -3,7 +3,6 @@
 		"public/build/css/dist.min.css": [
 			"public/lib/bootstrap/dist/css/bootstrap.css",
 			"public/lib/codemirror/lib/codemirror.css",
-			"public/lib/angular.treeview-master/css/angular.treeview.css",
 			"public/css/**/*.css"
 		]
 	},
