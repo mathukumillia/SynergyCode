@@ -103,5 +103,17 @@ footer p {
 .profilePic{
     min-height: 250px;
     height: auto;
-    max-width: 30%;
+}
+
+.projectList{
+    height: 250px;
+    overflow: auto;
+}
+
+.projectList li{
+    min-height: 50px;
+}
+
+h4{
+    text-decoration: underline;
 }

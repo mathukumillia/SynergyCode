@@ -5,21 +5,34 @@
 <section data-ng-controller = "IndexController" data-ng-show = "global.authenticated">
 	<div class = "container-fluid">
 		<div class = "row">
-			<div class = "thumbnail profilePic col-md-4">Picture</div>
+			<div class = "col-md-3">
+				<h4>Profile</h4>
+				<div class = "thumbnail profilePic">
+					Picture
+				</div>
+			</div>
+			<div class = "col-md-9">
+				<h4>My Projects</h4>
+				<div class = "list-group projectList">
+					<a href = "#!/edit" class = "list-group-item" data-ng-repeat = 'project in projects'>{{project.name}}</a>
+				</div>
+			</div>
+		</div>
+		<div class = "row">
+			<div class="col-md-4">
+				<h4>Social Media</h4>
+            	<a href="/auth/facebook"><img src="/img/icons/facebook.png"></a>
+            	<a href="/auth/github"><img src="/img/icons/github.png"></a>
+            	<a href="/auth/twitter"><img src="/img/icons/twitter.png"></a>
+            	<a href="/auth/google"><img src="/img/icons/google.png"></a>
+	            <a href="/auth/linkedin"><img src="/img/icons/linkedin.png"></a>
+        	</div>
 			<div class = "col-md-8">
-				<ul class = "list-group">
-					<li class = "list-group-item"></li>
-					<li class = "list-group-item"></li>
-					<li class = "list-group-item"></li>
-					<li class = "list-group-item"></li>
-					<li class = "list-group-item"></li>
-				</ul>
+				<h4>Recent Updates</h4>
+				<div class = "list-group">
+					<a href = "" class = "list-group-item">Will eventually contain recent changes once track changes is available</a>
+				</div>
 			</div>
 		</div>
 	</div>
-	<a href="#!/edit">Click me!</a>
-	<div>Picture</div>
-	<div>Project details</div>
-	<div>Social Media</div>
-	<div>Recent updates</div>
 </section>

@@ -36,10 +36,6 @@ angular.module('mean.chat').controller('ChatCtrl', ['$scope', 'Global', 'socket'
         }
 	};
 
-    $scope.getUserName = function(){
-
-    };
-
     $scope.checkToSend = function($event){
     	if($event.charCode === 13){
     		sendMessage();
