@@ -1,11 +1,11 @@
 {
-  "name": "mean",
-  "description": "MEAN - A fullStack javascript framework powered by  MongoDB, ExpressJS, AngularJS, NodeJS.",
-  "version": "0.1.2",
+  "name": "SynergyCode",
+  "description": "A Node.js FTP Alternative designed with collaberation in mind.",
+  "version": "0.1.0.1",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/linnovate/mean.git"
+    "url": "https://github.com/GalaxyProgramming/SynergyCode.git"
   },
   "engines": {
     "node": "0.10.x",
