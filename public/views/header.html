@@ -3,7 +3,7 @@
         <li>
             <a class="navbar-brand" href="/"><img src="/img/icons/SynergyCode.png"></a>
         </li>
-        <li data-ng-repeat="item in menu" data-ng-show="global.user" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+        <li data-ng-repeat="item in menu" data-ng-show="global.user" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" class="nav-menu">
             <a href="#!/{{item.link}}">{{item.title}}</a>
         </li>
     </ul>
