@@ -5,10 +5,12 @@ angular.module('mean.chat').controller('ChatCtrl', ['$scope', 'Global', 'socket'
 
 	var messages = [];
 
+  //a test message to ensure chat connection
 	socket.on('hello', function(){
 		console.log('DEBUG: Chat Connected');
 	});
 
+  //updates the chat with new messages as they are received from the server
 	socket.on('message', function (data) {
     console.log('message recieved');
         if(data.message) {
@@ -26,6 +28,7 @@ angular.module('mean.chat').controller('ChatCtrl', ['$scope', 'Global', 'socket'
         }
     });
 
+  //sends the message to the server after checking to make sure a message was entered
 	var sendMessage = function(){
 		if($scope.message === ''){
             alert('Please type a message!');
@@ -36,6 +39,7 @@ angular.module('mean.chat').controller('ChatCtrl', ['$scope', 'Global', 'socket'
         }
 	};
 
+    //signals chat to send a message when the enter key is pressed
     $scope.checkToSend = function($event){
     	if($event.charCode === 13){
     		sendMessage();
@@ -44,6 +48,7 @@ angular.module('mean.chat').controller('ChatCtrl', ['$scope', 'Global', 'socket'
 
 }]);
 
+//directive the make the chat a draggable element
 angular.module('mean.chat').directive('draggable', ['$document', function($document) {
     return function(scope, element, attr) {
     	var startX = 0, startY = 0, x = 0, y = 0;

@@ -30,6 +30,8 @@ exports.loadFile = function(socket){
 	});
 
 	var fileName;
+
+    //retrieves file using the file name
 	socket.on('fileName', function(data){
 		fileName = data.message;
 		console.log('DEBUG: File Name Received: ' + fileName);
@@ -59,6 +61,10 @@ exports.create = function(req, res) {
     console.log('DEBUG: File Created');
 };
 
+
+/**
+*  Upload an editable file to the database
+**/
 exports.upload = function(req, res){
     var editableFile = new EditableFile(req.files);
     console.log(req.files);
@@ -79,7 +85,7 @@ exports.upload = function(req, res){
 }
 
 /**
-* saves files to the database
+* Save files to the database
 **/
 exports.saveFile = function(fileInfo){
     console.log('This is the file content being saved ' + fileInfo[1]);

@@ -10,6 +10,7 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
 
     };
 
+    //list of the projects; will eventually dynamically update with projects found in the database
     $scope.projects = [{
 		'name' : 'project1',
 		'description' : 'a small project to raise chickens in a bathtub'

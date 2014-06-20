@@ -8,12 +8,13 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
     var editorInstance;
 
 	$scope.codeMirrorLoaded = function(editor){
-        
+        //init codemirror
         editor.setOption('lineNumbers', true);
         editor.setOption('theme', 'monokai');
         editor.setOption('lineWrapping', true);
         editor.setOption('mode', 'application/xml');
 
+        //save file on change
         editor.on('change', function(){
             if(fileOpened){
                 console.log('DEBUG: Editor Content Changed');
@@ -25,12 +26,14 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
         editorInstance = editor;
     };
 
+    //test function to make sure socket works with the editable files controllers
     socket.on('hello', function(){
       console.log('DEBUG: Socket.io Is Functional.');
     });
 
     var connection = new sharejs.Connection();
 
+    //handles collaboration setup every time a new file is opened
     socket.on('fileContent', function(data){
         currentFile = data.message;
 
@@ -53,6 +56,7 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
         console.log('DEBUG: ' + currentFile.title + ' Is Now Open');
     });
 
+    //creates a new file
     $scope.create = function() {
         var editableFile = new EditableFiles({
             title: this.title,
@@ -64,6 +68,7 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
         this.title = '';
         this.content = '';
 
+        //sends signal to refresh file tree when a new file is created
         socket.emit('refreshFileList');
 
     };
