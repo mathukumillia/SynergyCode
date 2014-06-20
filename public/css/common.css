@@ -1,6 +1,12 @@
 .navbar .nav>li>a.brand {
     padding-left:20px;
     margin-left:0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.navbar .nav>li {
+    height: 100%;
 }
 
 .content {

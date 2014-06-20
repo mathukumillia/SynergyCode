@@ -8,6 +8,7 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
     var editorInstance;
 
 	$scope.codeMirrorLoaded = function(editor){
+        
         editor.setOption('lineNumbers', true);
         editor.setOption('theme', 'monokai');
         editor.setOption('lineWrapping', true);
@@ -64,5 +65,6 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
         this.content = '';
 
         socket.emit('refreshFileList');
+
     };
 }]);
