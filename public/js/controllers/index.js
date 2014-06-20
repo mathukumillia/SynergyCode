@@ -1,7 +1,14 @@
 'use strict';
 
-angular.module('mean.system').controller('IndexController', ['$scope', 'Global', function ($scope, Global) {
+angular.module('mean.system').controller('IndexController', ['$scope', 'Global', '$upload',function ($scope, Global, $upload) {
     $scope.global = Global;
+
+    //profile pic uploader
+    $scope.picUpload = function($files){
+    	var file = $files[0];
+    	$scope.upload = $upload.upload({url: '/picUpload', method: 'POST', file: file});
+
+    };
 
     $scope.projects = [{
 		'name' : 'project1',

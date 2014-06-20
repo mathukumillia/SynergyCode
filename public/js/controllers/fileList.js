@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', 'socket', function($scope, Global, socket){
+angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', 'socket', '$upload',function($scope, Global, socket, $upload){
 	$scope.global = Global;
 
   var fileNames = new Array();
@@ -17,8 +17,13 @@ angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', 's
 
   $scope.fileMenu = fileNames;
 
-    $scope.sendFileName = function(fileName){
-      socket.emit('fileName', {message: fileName});
-      console.log('DEBUG: File Name Sent: ' + fileName);
-    };
+  $scope.sendFileName = function(fileName){
+    socket.emit('fileName', {message: fileName});
+    console.log('DEBUG: File Name Sent: ' + fileName);
+  };
+
+  $scope.fileUpload = function($files){
+    var file = $files[0];
+    $scope.upload = $upload.upload({url: '/fileUpload', method: 'POST', file: file});
+  };
 }]);

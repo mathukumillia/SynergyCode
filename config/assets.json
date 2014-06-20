@@ -8,7 +8,9 @@
 	},
 	"js": {
 		"public/build/js/dist.min.js": [
+			"public/lib/ng-file-upload/angular-file-upload-shim.min.js",
 			"public/lib/angular/angular.js",
+			"public/lib/ng-file-upload/angular-file-upload.min.js",
 			"public/lib/angular-cookies/angular-cookies.js",
 			"public/lib/angular-resource/angular-resource.js",
 			"public/lib/angular-ui-router/release/angular-ui-router.js",
@@ -22,7 +24,6 @@
 			"public/lib/angular-markdown-preview/markdown_preview.js",
 			"public/lib/marked/lib/marked.js",
 			"public/lib/angular-sanitize/angular-sanitize.js",
-			"public/lib/angular.treeview-master/angular.treeview.js",
 			"public/lib/angular-socket-io/socket.js",
 			"public/lib/share-codemirror/share-codemirror.js",
 			"public/js/**/*.js"

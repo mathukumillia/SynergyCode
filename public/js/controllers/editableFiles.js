@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 'Global', 'socket', 'EditableFiles', function($scope, Global, socket, EditableFiles){
+angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 'Global', 'socket', 'EditableFiles',function($scope, Global, socket, EditableFiles){
 	$scope.global = Global;
 
     var currentFile;

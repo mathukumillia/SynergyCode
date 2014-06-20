@@ -3,6 +3,7 @@
 	<div class = "fileMenu">
 		<div data-ng-repeat = "item in fileMenu" data-ng-click = "sendFileName(item)"><span class = "glyphicon glyphicon-file"></span>  {{item}}</div>
 	</div>
+	<input type = "file" ng-file-select = "fileUpload($files)">
 </section>
 
 

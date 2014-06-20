@@ -55,6 +55,7 @@ module.exports = function(app, passport, db) {
         app.use(express.urlencoded());
         app.use(express.json());
         app.use(express.methodOverride());
+        app.use(express.multipart());
 
         // Import your asset file
         var assets = require('./assets.json');

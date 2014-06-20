@@ -59,6 +59,25 @@ exports.create = function(req, res) {
     console.log('DEBUG: File Created');
 };
 
+exports.upload = function(req, res){
+    var editableFile = new EditableFile(req.files);
+    console.log(req.files);
+    editableFile.user = req.user;
+
+    editableFile.save(function(err) {
+        if (err) {
+            return res.send('users/signup', {
+                errors: err.errors,
+                editableFile: editableFile
+            });
+        } else {
+            res.jsonp(editableFile);
+        }
+    });
+
+    console.log('DEBUG: File Uploaded');
+}
+
 /**
 * saves files to the database
 **/

@@ -30,6 +30,10 @@ var EditableFileSchema = new Schema({
     user: {
         type: Schema.ObjectId,
         ref: 'User'
+    },
+    project: {
+        type: String,
+        default: 'miscellaneous'
     }
 });
 
@@ -43,6 +47,10 @@ EditableFileSchema.path('title').validate(function(title) {
 EditableFileSchema.path('permission').validate(function(permission) {
     return permission.length;
 }, 'Permission level must be specified');
+
+EditableFileSchema.path('project').validate(function(project) {
+    return project.length;
+}, 'The project this file belongs to must be specified');
 
 /**
  * Statics
