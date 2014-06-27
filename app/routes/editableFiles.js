@@ -9,7 +9,10 @@ module.exports = function(app){
 	app.post('/createEditableFiles', authorization.requiresLogin, editableFiles.create);
 
 	// redirects user to edit page
-	app.post('/edit', authorization.requiresLogin);    
+	app.post('/edit/:projectName', authorization.requiresLogin);
+	app.param('projectName', function(req,res,next,projectName){
+		req.project = projectName;
+	});
 	
 	// route to upload files when front end submits a file
 	app.post('/fileUpload', authorization.requiresLogin, editableFiles.upload);    

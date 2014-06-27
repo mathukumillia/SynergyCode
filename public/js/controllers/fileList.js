@@ -10,6 +10,7 @@ angular.module('mean.system').controller('FileListCtrl', ['$scope', 'Global', 's
     for(var i = 0; i<data.message.length; i++){
       fileNames[i] = data.message[i].title;
     }
+    $scope.fileMenu = fileNames;
   };
 
   //tells file list to re-publish every time the server sends the fileList event

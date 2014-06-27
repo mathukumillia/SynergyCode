@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.system').controller('IndexController', ['$scope', 'Global', '$upload',function ($scope, Global, $upload) {
+angular.module('mean.system').controller('IndexController', ['$scope', 'Global', '$upload', 'socket', function ($scope, Global, $upload, socket) {
     $scope.global = Global;
 
     //profile pic uploader

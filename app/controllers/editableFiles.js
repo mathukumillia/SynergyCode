@@ -1,7 +1,8 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-	EditableFile = mongoose.model('EditableFile');
+	EditableFile = mongoose.model('EditableFile'),
+    currentFiles;
 
 /**
 * Retrieve a file from the database and send it to the frontend using socket
@@ -82,7 +83,7 @@ exports.upload = function(req, res){
     });
 
     console.log('DEBUG: File Uploaded');
-}
+};
 
 /**
 * Save files to the database
@@ -102,11 +103,10 @@ exports.saveFile = function(fileInfo){
 };
 
 /**
-*  List of all editableFiles
+*  List of all editableFiles in this project
 **/
 exports.all = function(socket){
     EditableFile.find().sort('created').populate('user', 'name username').exec(function(err, files) {
         socket.emit('fileList', {message: files});
     });
 };
-
