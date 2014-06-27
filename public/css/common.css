@@ -5,6 +5,38 @@
     vertical-align: middle;
 }
 
+.homepage {
+    padding: 50px;
+    background-color: #E8E8E8;
+    border-radius: 5px;
+}
+
+.homepage>img {
+    max-width: 100%;
+    text-align: center;
+}
+.homepage>a {
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+    width: 175px;
+    text-align: center;
+    background-color: #168add;
+    text-decoration: none;
+    color: white;
+    border-radius: 2px;
+    font-size: 25px;
+    display: block;
+    margin-top: 40px;
+}
+.homepage>a:hover {
+    background-color: #59b0ef;
+}
+
+.nav>li>a>img {
+    height: 30px;
+}
+
 .navbar .nav>li {
     height: 100%;
 }

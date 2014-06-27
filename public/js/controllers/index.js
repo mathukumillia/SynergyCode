@@ -13,24 +13,24 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
     //list of the projects; will eventually dynamically update with projects found in the database
     $scope.projects = [{
 		'name' : 'project1',
-		'description' : 'a small project to raise chickens in a bathtub'
+		'description' : 'MVHSTSA website'
 	}, {
 		'name' : 'project2',
-		'description' : 'a tiny virus to destroy the world'
+		'description' : 'GlalaxyProgramming'
 	}, {
 		'name' : 'project3',
-		'description' : 'Matthew Price attempt to recreate the big bang' 
+		'description' : 'Crypto-bot' 
 	}, {
 		'name' : 'project4',
-		'description' : 'peter cleverdon waznt here'
+		'description' : 'NCAA Tournament'
 	}, {
 		'name' : 'project5',
-		'description' : 'its late-ish and Im out of creative project ideas'
+		'description' : 'Flag'
 	}, {
 		'name' : 'project6',
-		'description' : 'Eat more chikin'
+		'description' : 'Sorts'
 	}, {
 		'name' : 'project7',
-		'description' : 'LOLOLOLOLOLOYOLO'
+		'description' : 'Arrays'
 	}];
 }]);
