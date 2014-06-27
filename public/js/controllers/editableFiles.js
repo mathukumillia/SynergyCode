@@ -60,16 +60,17 @@ angular.module('mean.editableFiles').controller('EditableFilesCtrl', ['$scope', 
     $scope.create = function() {
         var editableFile = new EditableFiles({
             title: this.title,
-            content: this.content
+            content: this.content,
+            project: this.project
         });
 
         editableFile.$save();
 
         this.title = '';
         this.content = '';
+        this.project = '';  
 
         //sends signal to refresh file tree when a new file is created
         socket.emit('refreshFileList');
-
     };
 }]);
